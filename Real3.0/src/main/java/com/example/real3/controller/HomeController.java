@@ -1,8 +1,10 @@
 package com.example.real3.controller;
 
+import com.example.real3.admin.Account;
 import com.example.real3.admin.User;
 import com.example.real3.form.UserForm;
 import com.example.real3.form.UserLoginForm;
+import com.example.real3.service.JsonService;
 import com.example.real3.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.lang.reflect.Member;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -25,10 +26,12 @@ import java.net.http.HttpResponse;
 @RequiredArgsConstructor
 public class HomeController {
     private final UserService userService;
+    private final JsonService jsonService;
+
 
     @GetMapping("/register")
     public String main(Model model) throws IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
+        /*HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://wallet-api.klaytnapi.com/v2/account"))
                 .header("x-chain-id", "8217")
                 .header("Accept", "application/json")
@@ -36,8 +39,8 @@ public class HomeController {
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
         log.info(response.body());
+        */
         model.addAttribute("userForm", new UserForm());
 
         return "/start_form/signup";
@@ -48,46 +51,60 @@ public class HomeController {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://wallet-api.klaytnapi.com/v2/account"))
-                .header("x-chain-id", "8217")
+                .header("x-chain-id", "1001")
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
-                .header("Authorization", "Basic S0FTSzBQNFlMRDc3UjJLWDI4REFQWFRYOmJ3SW9IRlVVZWdWOXpGRDU1TWVPRTNkWVBVZHMwTzB4WFh2MThBTjQ=")
+                .header("Authorization", "Basic S0FTS1pHMkZNMDUzREZQNTlDVFJSSFpHOmFZZHVVSmZYV1FnSlBLZUhyV1o3Um5LVUhodkpDLTB2d2JyeU5Md3Y=")
                 .method("POST", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         log.info(response.body());
+        Account account = jsonService.split(response.body());
 
+        User user = new User(userForm.getName(),
+                            userForm.getUserId(),
+                            userForm.getPassword(),
+                            userForm.getBirth(),
+                            userForm.getSex(),
+                            account);
 
-        User user = new User();
-        user.setName(userForm.getName());
-        user.setUserId(userForm.getUserId());
-        user.setPassWord(userForm.getPassword());
-        user.setBirth(userForm.getBirth());
-        user.setSex(userForm.getSex());
-
-//        user.setSex(userForm.isSex());
-//        user.setBirth(userForm.getBirth());
-        userService.saveUser(user);
+        userService.saveUser(user, account);
         log.info("why?");
         return "redirect:http://localhost:8080/";
     }
 
     @GetMapping("/")
     public String login_check(Model model) {
+        log.info("hi1");
         model.addAttribute("memberLoginForm", new UserLoginForm());
         return "/start_form/login";
     }
 
     @PostMapping("/")
-    public String login(UserLoginForm userLoginForm, BindingResult result, Model model, HttpSession session) {
+    public String login(UserLoginForm userLoginForm, BindingResult result, HttpSession session) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://wallet-api.klaytnapi.com/v2/account"))
+                .header("x-chain-id", "1001")
+                .header("Accept", "application/json")
+                .header("Authorization", "Basic S0FTS1pHMkZNMDUzREZQNTlDVFJSSFpHOmFZZHVVSmZYV1FnSlBLZUhyV1o3Um5LVUhodkpDLTB2d2JyeU5Md3Y=")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
+        log.info("hi2");
         User loginUser = userService.findLoginMember(userLoginForm);
 
         if (loginUser == null){
+            log.info("fail");
             return "redirect:/";
         }
         session.setAttribute("user", loginUser);
-
-        return "/start_form/login";
+        session.setAttribute("account", loginUser.getAccount());
+        log.info("pass");
+        return "redirect:/home";
+    }
+    @GetMapping("/home")
+    public String getHome(){
+        return "/main_form/main_view";
     }
 }

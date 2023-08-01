@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <html lang="ko">
 
 <head>
@@ -46,14 +48,16 @@
     <br><br>
 
 
-    <form name="log" method="get">
+    <form name="log" method="post" th:action="@{/}" th:object="${memberLoginForm}">
         <input type="text"
             style="display: block; margin-left: auto; margin-right: auto; font-family:Pretendard-Regular;"
-            placeholder="아이디">
+            th:field="*{userId}"
+               placeholder="아이디">
         <br>
         <input type="password"
             style="display: block; margin-left: auto; margin-right: auto;font-family:Pretendard-Regular;"
-            placeholder="비밀번호">
+            th:field="*{password}"
+               placeholder="비밀번호">
         <br><br>
         <br><br>
         <br><br>
@@ -67,7 +71,7 @@
     <br><br>
 
 
-    <a href="" style="text-align: center; display: block; color: #fff;">회원가입</a>
+    <a href="/register" style="text-align: center; display: block; color: #fff;">회원가입</a>
 
 </body>
 
