@@ -45,7 +45,8 @@ public class TokenService {
         return metadata;
     }
     public void makeToken(String address, String id, String uri, HttpSession session) throws IOException, InterruptedException {
-        //Metadata metadata = getMetadata(session, );
+        BookMarker bookMarker = new BookMarker();
+        Metadata metadata = getMetadata(session, bookMarker);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://kip17-api.klaytnapi.com/v2/contract/0xef9864db8494194b0e8a38280a71f74ef2d82065/token"))

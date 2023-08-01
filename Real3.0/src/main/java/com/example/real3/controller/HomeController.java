@@ -76,7 +76,7 @@ public class HomeController {
     @GetMapping("/")
     public String login_check(Model model) {
         log.info("hi1");
-        model.addAttribute("memberLoginForm", new UserLoginForm());
+        model.addAttribute("userLoginForm", new UserLoginForm());
         return "/start_form/login";
     }
 
@@ -106,5 +106,26 @@ public class HomeController {
     @GetMapping("/home")
     public String getHome(){
         return "/main_form/main_view";
+    }
+    @GetMapping("/market")
+    public String getMarket(){
+        return "/seed_form/p_market";
+    }
+    @GetMapping("/bookmark")
+    public String getBookMark(){
+        return "/seed_form/detail_mark";
+    }
+
+    @GetMapping("/page")
+    public String getPage(){
+        return "/page_form/page";
+    }
+    @GetMapping("/mypage")
+    public String getMyPage(){
+        return "abc";
+    }
+    @GetMapping("/detailMark")
+    public String getDetailMark(){
+        return "seed_form/detail_mark";
     }
 }
