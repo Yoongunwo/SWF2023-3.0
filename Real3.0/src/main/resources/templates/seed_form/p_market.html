@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/Real3.0/src/main/resources/static/css/main.css">
     <title>Document</title>
+
+    <style>
+        input.img-button {
+            background: url('/Real3.0/src/main/resources/static/image/Vector.svg') no-repeat;
+            border-style: none;
+            width: 30px;
+            height: auto;
+            margin-top: 9%;
+            margin-left: 5%;
+        }
+
+        input.img-book1 {
+            background: url('/Real3.0/src/main/resources/static/image/seed_main/Group.svg') no-repeat;
+            border-style: none;
+            width: 150px;
+            height: 250px;
+        }
+
+        input.img-book2 {
+            background: url('/Real3.0/src/main/resources/static/image/seed_main/Group-1.svg') no-repeat;
+            border-style: none;
+            width: 130px;
+            height: 250px;
+        }
+
+        input.img-book3 {
+            background: url('/Real3.0/src/main/resources/static/image/seed_main/Group-2.svg') no-repeat;
+            border-style: none;
+            width: 100px;
+            height: 250px;
+        }
+
+        input.img-book4 {
+            background: url('/Real3.0/src/main/resources/static/image/seed_main/Group-3.svg') no-repeat;
+            border-style: none;
+            width: 150px;
+            height: 250px;
+        }
+
+        input.img-book5 {
+            background: url('/Real3.0/src/main/resources/static/image/seed_main/Group-4.svg') no-repeat;
+            border-style: none;
+            width: 150px;
+            height: 250px;
+        }
+    </style>
+
+
 </head>
 
 <body>
+
+    <div>
+        <input type="button" class="img-button" onclick="alert('이전 페이지로')">
+        <img src="/Real3.0/src/main/resources/static/image/P MARKET.svg" />
+    </div>
+
+    <div style="background-color: aqua; margin-left: 10%; margin-top: 10%; height: 250px;">
+        <a href="detail_mark.html"><img src="/Real3.0/src/main/resources/static/image/seed_main/Group.svg"></a>
+        <a href="detail_mark.html"><img src="/Real3.0/src/main/resources/static/image/seed_main/Group-1.svg"></a>
+        <a href="detail_mark.html"><img src="/Real3.0/src/main/resources/static/image/seed_main/Group-2.svg"></a>
+    </div>
+
+    <div style="background-color: aqua; margin-right: 20%; margin-top: 10%;">
+        <a href="detail_mark.html"><img src="/Real3.0/src/main/resources/static/image/seed_main/Group-3.svg"></a>
+        <a href="detail_mark.html"><img src="/Real3.0/src/main/resources/static/image/seed_main/Group-4.svg"></a>
+    </div>
+    <!-- 복사본 -->
+
+
     <!-- 하단 메뉴바 -->
     <div class="footer rectangle" id="menubar">
         <ul>
