@@ -28,7 +28,10 @@ public class HomeController {
     private final UserService userService;
     private final JsonService jsonService;
 
-
+    @GetMapping("/zero")
+    public String zero(){
+        return "zero";
+    }
     @GetMapping("/register")
     public String main(Model model) throws IOException, InterruptedException {
         /*HttpRequest request = HttpRequest.newBuilder()
@@ -122,11 +125,20 @@ public class HomeController {
     }
     @GetMapping("/mypage")
     public String getMyPage(){
-        return "abc";
+        return "/mypage/mypage";
     }
+
     @GetMapping("/search")
-    public String getSearch(){
+    public String getSearchPage(){
         return "/main_form/search_view";
+    }
+    @GetMapping("/wallet")
+    public String getWallet(){
+        return "/wallet";
+    }
+    @GetMapping("/buy")
+    public String getBuy(){
+        return "/buy1";
     }
     @GetMapping("/detailMark")
     public String getDetailMark(){
