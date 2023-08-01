@@ -1,0 +1,86 @@
+.loc {
+    position: absolute;
+    width: 140.14px;
+    height: 115.38px;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.screen h1 {
+    margin-bottom: 20px;
+}
+
+.zz {
+    position: absolute;
+    align-items: center;
+}
+
+.centerwjd {
+    display: flex;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 메인로고 */
+.vec1 {
+    position: absolute;
+    left: 0%;
+    right: 25.12%;
+    top: 0%;
+    bottom: 85.33%;
+
+    background: #FFFFFF;
+}
+
+.vec2 {
+    position: absolute;
+    left: 0%;
+    right: 25.12%;
+    top: 83.65%;
+    bottom: 1.68%;
+
+    background: #FFFFFF;
+}
+
+.vec3 {
+    position: absolute;
+    left: 15.49%;
+    right: 66.9%;
+    top: 22.01%;
+    bottom: 23.2%;
+
+    background: #FFFFFF;
+}
+
+.vec4 {
+    position: absolute;
+    left: 40.44%;
+    right: 42.8%;
+    top: 27.01%;
+    bottom: 25.49%;
+
+    background: #FFFFFF;
+    transform: rotate(-13.32deg);
+}
+
+.vec5 {
+    position: absolute;
+    left: 85.51%;
+    right: 0%;
+    top: 82.41%;
+    bottom: 0%;
+
+    background: #FFFFFF;
+}
+
+/* 메인로고 끝 */
