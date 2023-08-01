@@ -1,27 +1,38 @@
 /* 브라우저가 제공하는 기본 스타일 초기화 */
-body, h1, h2, h3, p, img, a {
+body,
+h1,
+h2,
+h3,
+p,
+img,
+a {
     margin: 0;
     padding: 0;
     border: none;
 }
 
 .container {
-    text-align: center; /* 요소들을 가운데 정렬 */
+    text-align: center;
+    /* 요소들을 가운데 정렬 */
 }
 
 .link {
-    display: inline-block; /* 요소들을 가로로 나열 */
+    display: inline-block;
+    /* 요소들을 가로로 나열 */
 }
 
 .back {
     width: 20px;
     height: 20px;
-    margin-right: 10px; /* 이미지와 텍스트 사이의 간격 조정 */
+    margin-right: 10px;
+    /* 이미지와 텍스트 사이의 간격 조정 */
 }
 
 h3 {
-    display: inline; /* 제목을 인라인 레벨 요소로 설정하여 이미지와 같은 줄에 표시 */
+    display: inline;
+    /* 제목을 인라인 레벨 요소로 설정하여 이미지와 같은 줄에 표시 */
 }
+
 .rectangle {
     position: absolute;
     border-radius: 24px;
