@@ -18,7 +18,7 @@
             font-size: 16px;
             border-radius: 10px;
             /* 둥글게 디자인하기 */
-            padding: 5px 10px;
+            padding: 5px 10px;}
 
 
             @font-face {
@@ -48,7 +48,7 @@
     <br><br>
 
 
-    <form name="log" method="post" th:action="@{/}" th:object="${memberLoginForm}">
+    <form name="log" method="post" th:action="@{/}" th:object="${userLoginForm}">
         <input type="text"
             style="display: block; margin-left: auto; margin-right: auto; font-family:Pretendard-Regular;"
             th:field="*{userId}"

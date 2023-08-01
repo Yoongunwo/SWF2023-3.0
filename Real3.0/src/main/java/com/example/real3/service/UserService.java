@@ -9,8 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Member;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -26,10 +24,10 @@ public class UserService {
     public User findLoginMember(UserLoginForm userLoginForm) {
         log.info("1");
         User findUser = userRepository.findUserByUserId(userLoginForm.getUserId());
-        if(findUser != null && userLoginForm.getPassword().equals(findUser.getPassWord())){
+        if(findUser != null && userLoginForm.getPassword().equals(findUser.getPassword())){
             return findUser;
         }
-        log.info(findUser.getUserId());
+//        log.info(findUser.getUserId());
 
         return null;
     }

@@ -15,8 +15,8 @@ import java.util.List;
 @Document(collection = "metadata")
 @Getter @Setter
 public class Metadata {
-    @Id
-    private String id;
+//    @Id
+//    private String id;
     private String name;
     private String description;
     private String uri;
