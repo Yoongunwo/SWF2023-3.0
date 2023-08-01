@@ -2,101 +2,25 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
-    <style>
-        /* 슬라이더 컨테이너 스타일링 */
-        .slider-container {
-            width: 100%;
-            /* <iframe>의 너비에 맞추기 위해 100%로 설정 */
-            overflow: hidden;
-        }
-
-        /* 이미지 슬라이더 스타일링 */
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
-            /* 이미지가 슬라이드되는 속도를 원하는 대로 조정하세요 */
-        }
-
-        /* 슬라이더 이미지 스타일링 */
-        .slider img {
-            width: 100%;
-            /* 이미지가 <iframe>의 너비에 맞게 자동 조절되도록 100%로 설정 */
-            height: auto;
-            /* 이미지의 세로 크기를 자동으로 조절하여 비율을 유지 */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/Real3.0/src/main/resources/static/css/main.css">
 
     <title>Document</title>
 </head>
 
-<body>
-    <img src="../../static/image/1.jpg" alt="로고" width="30px" style="margin-left: 1%;">
-    <img src="../../static/image/1.jpg" alt="검색" style="margin-left: 75%;" width="30px">
-    <img src="../../static/image/1.jpg" alt="알림" width="30px">
+<body style="background-color: #BDFF00;">
+    <span style="margin-top: 30%; margin-left: 10%;">
+        <img src="/Real3.0/src/main/resources/static/image/seed_first/Ellipse 5.svg" />
+        <img src="/Real3.0/src/main/resources/static/image/seed_first/Group 5.svg" />
+    </span>
+    <div style="margin-left: 100;">
+        <img src="/Real3.0/src/main/resources/static/image/seed_first/Frame.svg" />
 
-
-    <iframe src="iframe_image.html" style="width: 100%; height: 430px; border: none;"></iframe>
-
-    <br><br>
-    <br><br>
-    <br><br>
-
-    <div style="margin-left: 10%;">
-        <h2>#MOOD</h2>
-        <table>
-            <tr>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-                </td>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-                </td>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-
-                </td>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-
-                </td>
-                <td>
-                    <img src="../../static/image/1.jpg" width="auto" height="80">
-
-                </td>
-            </tr>
-        </table>
     </div>
 
-    <br><br>
 
-
-    <div>
-        <h2 style="margin-left: 10%;">오늘의 추천</h2>
-    </div>
-
-    <!--책들 드래그-->
-    <div class="fixed" style="position: absolute; background-color: #BDFF00;"></div>
-    <div>
-        <div class="slider-container1">
-            <div class="books" style="height: 430px; margin: 10%;">
-                <img src="../../static/image/seok1.png">
-                <img src="../../static/image/seok2.png">
-                <img src="../../static/image/seok3.png">
-            
-        </div>
-    </div>
-    
-
+    <!-- 하단 메뉴바 -->
     <div class="footer rectangle" id="menubar">
         <ul>
             <li>

@@ -105,3 +105,29 @@ td {
     height: auto;
     /* 이미지의 세로 크기를 자동으로 조절하여 비율을 유지 */
 }
+
+div.books img {
+    width: 100%;
+    height: auto;
+}
+
+
+.slider-container1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.books {
+    display: flex;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fixed {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    height: 60%;
+}
