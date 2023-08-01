@@ -26,7 +26,7 @@ import java.net.http.HttpResponse;
 public class HomeController {
     private final UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("/register")
     public String main(Model model) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://wallet-api.klaytnapi.com/v2/account"))
@@ -40,10 +40,10 @@ public class HomeController {
         log.info(response.body());
         model.addAttribute("userForm", new UserForm());
 
-        return "main";
+        return "/start_form/signup";
     }
 
-    @PostMapping("/")
+    @PostMapping("/register")
     public String mainPost(UserForm userForm, HttpSession session) throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -62,20 +62,23 @@ public class HomeController {
         user.setName(userForm.getName());
         user.setUserId(userForm.getUserId());
         user.setPassWord(userForm.getPassword());
+        user.setBirth(userForm.getBirth());
+        user.setSex(userForm.getSex());
+
 //        user.setSex(userForm.isSex());
 //        user.setBirth(userForm.getBirth());
         userService.saveUser(user);
         log.info("why?");
-        return "redirect:/";
+        return "redirect:http://localhost:8080/";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String login_check(Model model) {
         model.addAttribute("memberLoginForm", new UserLoginForm());
-        return "login";
+        return "/start_form/login";
     }
 
-    @PostMapping("/members/login")
+    @PostMapping("/")
     public String login(UserLoginForm userLoginForm, BindingResult result, Model model, HttpSession session) {
 
         User loginUser = userService.findLoginMember(userLoginForm);
@@ -85,6 +88,6 @@ public class HomeController {
         }
         session.setAttribute("user", loginUser);
 
-        return "main";
+        return "/start_form/login";
     }
 }

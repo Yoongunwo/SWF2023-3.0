@@ -13,6 +13,6 @@ public class User {
     private String passWord;
     private String address;
     private String privateKey;
-    private Date birth;
-    private Boolean sex;
+    private String birth;
+    private String sex;
 }
