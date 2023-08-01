@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/signup.css">
+</head>
+<body style="background-color: #5F4DFF;font-family: 'Pretendard-Regular';">
+<a href="/">
+    <img src="https://github.com/Yoongunwo/Seoul_Web3.0_Real3.0/assets/97718735/ce5acd3c-6e99-4dd8-9597-5b7410f4f1f2" class="back" style="margin-left: 60px; margin-top: 80px; width: 20px; height: 20px">
+</a>
+  
+  <br><br><br>
+<h2 style="font-family: 'Pretendard-Regular';text-align: center; color: white;">회원가입</h2>
+<br><br><br>
+<form th:action="@{/register}" th:object="${userForm}" method="post">
+  <input class="box" type="text" size="30" value="" placeholder="  이름" th:field="*{name}"><br>
+  <input class="box" type="text" size="30" value="" placeholder="  아이디" th:field="*{userId}"><br>
+  <input class="box" type="password" size="30" value="" placeholder="  비밀번호" th:field="*{password}"><br>
+  <input class="box" type="text" placeholder="  xxxx_yy_zz" th:field="*{birth}"><br>
+  <select class="box" name="sex" aria-placeholder="  성별" th:field="*{sex}">
+    <option value="male">male</option>
+    <option value="female">female</option>
+  </select><br><br><br>
+  <input style="text-align: center; background-color: greenyellow; font-weight: bold;" class="box" type="submit" value="가입">
+</form>
+</body>
+</html>
+

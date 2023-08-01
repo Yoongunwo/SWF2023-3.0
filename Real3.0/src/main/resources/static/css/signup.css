@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SDSamliphopangche_Outline';
+  height: 375px;
+  width: 812px;
+  margin: 0;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  margin: 10px auto;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+}
+
+.back {
+  align-items: left;
+}
