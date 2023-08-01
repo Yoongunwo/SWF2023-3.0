@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>이미지 슬라이드 쇼</title>
+  <style>
+    #slideshow-container {
+      max-width: 500px;
+      position: relative;
+      margin: auto;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="slideshow-container">
+    <img class="slide" src="1.jpg" alt="이미지 1">
+    <img class="slide" src="2.jpg" alt="이미지 2">
+    <img class="slide" src="3.jpg" alt="이미지 3">
+  </div>
+
+  <script>
+    var currentSlide = 0;
+    var slides = document.getElementsByClassName("slide");
+
+    function showSlide() {
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].style.display = "block";
+    }
+
+    setInterval(showSlide, 1500); // 3초마다 이미지를 변경하도록 설정
+  </script>
+</body>
+
+</html>

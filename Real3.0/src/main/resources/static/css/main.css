@@ -19,6 +19,17 @@ body {
 
 }
 
+.head_sng {
+    bottom: 2%;
+    left: 8%;
+    width: 84%;
+}
+
+.head_sng ul {
+    list-style: none;
+    display: flex;
+}
+
 .footer {
     background-color: #fff;
     color: #fff;
