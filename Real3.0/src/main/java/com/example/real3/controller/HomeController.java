@@ -124,6 +124,10 @@ public class HomeController {
     public String getMyPage(){
         return "abc";
     }
+    @GetMapping("/search")
+    public String getSearch(){
+        return "/main_form/search_view";
+    }
     @GetMapping("/detailMark")
     public String getDetailMark(){
         return "seed_form/detail_mark";
