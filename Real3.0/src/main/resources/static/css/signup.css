@@ -6,24 +6,25 @@
 }
 
 body {
-    font-family: 'SDSamliphopangche_Outline';
-    height: 100vh;
-    margin: 0;
-    flex-direction: column;
-  }
-  
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 300px;
-    height: 40px;
-    margin: 10px auto;
-    font-size: 15px;
-    font-family: 'Pretendard-Regular';
-  }
-  
-  .back {
-    align-items: left;
-  }
+  font-family: 'SDSamliphopangche_Outline';
+  height: 375px;
+  width: 812px;
+  margin: 0;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  margin: 10px auto;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+}
+
+.back {
+  align-items: left;
+}
