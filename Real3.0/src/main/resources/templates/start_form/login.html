@@ -4,21 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .input-container {
+            background-color: #fff;
+            border-radius: 20px;
+            /* 둥글게 디자인하기 */
+            padding: 10px 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            /* 그림자 추가 */
+        }
+
+        input {
+            border: none;
+            /* 테두리 없애기 */
+            outline: none;
+            /* 포커스 시 발생하는 외곽선 제거 */
+            width: 241px;
+            height: 27px;
+            font-size: 16px;
+            border-radius: 10px;
+            /* 둥글게 디자인하기 */
+            padding: 5px 10px;
+        }
+
+        .background-wrap {
+            background-image: url('/Real3.0/src/main/resources/static/image/Rectangle 4.svg');
+            background-size: 272px 196px;
+            width: 272px;
+            height: 190px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content span {
+            color: black;
+        }
+
+        .content span:nth-child(1) {
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Pretendard-Regular;
+        }
+
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'SDSamliphopangche_Outline';
+        }
+    </style>
+
     <title>로그인</title>
+
 </head>
 
 <body style="background-color: #7061EF;">
-    <div style="color: #FFFFFF; text-align: center;">
+    <br><br>
+    <br><br>
+    <br>
+    <div style="color: #FFFFFF; text-align: center; font-family:Pretendard-Regular; ">
         <h2>로그인</h2>
     </div>
+    <br><br>
+    <br><br>
 
-    <div>
-        <input type="text" placeholder="아이디" style="font-size: 15px;">
-        <br>
-        <input type="text" placeholder="비밀번호" style="font-size: 15px;">
+
+    <input type="text" style="display: block; margin-left: auto; margin-right: auto; font-family:Pretendard-Regular;"
+        placeholder="아이디">
+    <br>
+    <input type="text" style="display: block; margin-left: auto; margin-right: auto;font-family:Pretendard-Regular;"
+        placeholder="비밀번호">
+    <br>
+
+    <div class="text-on-img">
+        <div class="background-wrap">
+            <div class="content">
+                <span>로그인</span>
+            </div>
+        </div>
     </div>
 
+    <br><br>
+    <br><br>
+    <br><br>
 
+    <a href="" style="text-align: center; display: block; color: #fff;">회원가입</a>
 
 </body>
 
